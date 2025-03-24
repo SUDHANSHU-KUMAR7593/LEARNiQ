@@ -8,33 +8,37 @@ import Lecture from "./pages/Lecture";
 import Lectureyoutube from "./pages/Lectureyoutube";
 import Quiz from "./pages/Quiz";
 import HomePage from "./pages/Home";
+import Chatbot from "./components/Chatbot"; // Import AI Chatbot Component
+
 function App() {
   return (
     <div className="App">
       <Router>
         <Navbar />
-        <br></br>
-        <br></br>
-        <br></br>
+        
+        {/* Adding some space below the Navbar */}
+        <br />
+        <br />
+        <br />
+
         <Routes>
-          <Route path="/dashboard" element={<Dashboard />}></Route>
-          <Route path="/login" element={<Login />}></Route>
-          <Route path="/register" element={<Register />}></Route>
-          <Route path="/quiz" element={<Quiz />}></Route>
-          <Route path="/" element={<HomePage />}></Route>
-          <Route path="/Home" element={<HomePage />}></Route>
-          <Route
-            path={"/lecture" || "/lecture/:search"}
-            element={<Lecture />}
-          ></Route>
-          <Route
-            path="/lectureyoutube/:playlistId"
-            element={<Lectureyoutube />}
-          ></Route>
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/quiz" element={<Quiz />} />
+          <Route path="/" element={<HomePage />} />
+          <Route path="/Home" element={<HomePage />} />
+          <Route path="/lecture" element={<Lecture />} />
+          <Route path="/lecture/:search" element={<Lecture />} />
+          <Route path="/lectureyoutube/:playlistId" element={<Lectureyoutube />} />
         </Routes>
+
+        {/* AI Chatbot Component - Fixed at bottom-right */}
+        <Chatbot />
       </Router>
     </div>
   );
 }
 
 export default App;
+
